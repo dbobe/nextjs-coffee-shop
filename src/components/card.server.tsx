@@ -23,6 +23,8 @@ export default function Card({ name, imgUrl, href }: CardType) {
             alt={name}
             width={260}
             height={160}
+            blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQQAAACgCAQAAABA+9rNAAABDUlEQVR42u3SgQAAAAgDsJ88wKQSCGFjWHcCqQiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIACIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgggiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIACIgAiIgAp8DQ0TO4VshFMEAAAAASUVORK5CYII="
+            placeholder="blur"
           />
         </div>
       </div>
