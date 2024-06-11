@@ -1,8 +1,17 @@
 import Banner from "@/components/banner.client";
 import Card from "@/components/card.server";
+import { fetchCoffeeStores } from "@/lib/coffee-stores";
 import Image from "next/image";
 
-export default function Home() {
+async function getData() {
+  // mapbox api
+  return await fetchCoffeeStores();
+}
+
+export default async function Home() {
+  const data = await getData();
+  console.log(data);
+
   const coffeeStoreId = "dark-horse-coffee";
   const coffeeStores = [
     {
