@@ -4,24 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-async function getData(id: string) {
-  return await fetchCoffeeStore(id);
+async function getData(id: string, queryId: string) {
+  return await fetchCoffeeStore(id, queryId);
 }
 
 export async function generateStaticParams() {
-  const coffeeStores = await fetchCoffeeStores();
+  const TORONTO_LONG_LAT = "-79.3789680885594%2C43.653833032607096";
+  const coffeeStores = await fetchCoffeeStores(TORONTO_LONG_LAT, 6);
 
   return coffeeStores.map((coffeeStore: CoffeeStoreType) => ({
-    id: coffeeStore.id,
+    id: coffeeStore.id.toString(),
   }));
 }
 
-export default async function Page(props: { params: { id: string } }) {
+export default async function Page(props: {
+  params: { id: string };
+  searchParams: { id: string };
+}) {
   const {
     params: { id },
+    searchParams: { id: queryId },
   } = props;
 
-  const coffeeStore = await getData(id);
+  const coffeeStore = await getData(id, queryId);
   const { name = "", address = "", imgUrl = "" } = coffeeStore;
 
   console.log({ coffeeStore });
