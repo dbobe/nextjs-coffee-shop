@@ -1,3 +1,4 @@
+import { createCoffeeStore } from "@/lib/airtable";
 import { fetchCoffeeStore, fetchCoffeeStores } from "@/lib/coffee-stores";
 import { CoffeeStoreType } from "@/types";
 import Image from "next/image";
@@ -5,7 +6,9 @@ import Link from "next/link";
 import React from "react";
 
 async function getData(id: string, queryId: string) {
-  return await fetchCoffeeStore(id, queryId);
+  const coffeeStoreFromMapbox = await fetchCoffeeStore(id, queryId);
+  const _createCoffeeStore = createCoffeeStore(coffeeStoreFromMapbox, id);
+  return coffeeStoreFromMapbox;
 }
 
 export async function generateStaticParams() {
