@@ -7,9 +7,19 @@
   body {
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoue UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    @apply bg-gradient bg-cover bg-[50%] bg-repeat h-full;
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      Segoue UI,
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      Fira Sans,
+      Droid Sans,
+      Helvetica Neue,
+      sans-serif;
+    @apply h-full bg-gradient bg-cover bg-[50%] bg-repeat;
   }
 
   h1 {

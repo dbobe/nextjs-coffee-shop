@@ -1,9 +1,9 @@
-import { createCoffeeStore } from "@/lib/airtable";
-import { fetchCoffeeStore, fetchCoffeeStores } from "@/lib/coffee-stores";
-import { CoffeeStoreType } from "@/types";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { createCoffeeStore } from '@/lib/airtable';
+import { fetchCoffeeStore, fetchCoffeeStores } from '@/lib/coffee-stores';
+import { CoffeeStoreType } from '@/types';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 async function getData(id: string, queryId: string) {
   const coffeeStoreFromMapbox = await fetchCoffeeStore(id, queryId);
@@ -12,7 +12,7 @@ async function getData(id: string, queryId: string) {
 }
 
 export async function generateStaticParams() {
-  const TORONTO_LONG_LAT = "-79.3789680885594%2C43.653833032607096";
+  const TORONTO_LONG_LAT = '-79.3789680885594%2C43.653833032607096';
   const coffeeStores = await fetchCoffeeStores(TORONTO_LONG_LAT, 6);
 
   return coffeeStores.map((coffeeStore: CoffeeStoreType) => ({
@@ -30,7 +30,7 @@ export default async function Page(props: {
   } = props;
 
   const coffeeStore = await getData(id, queryId);
-  const { name = "", address = "", imgUrl = "" } = coffeeStore;
+  const { name = '', address = '', imgUrl = '' } = coffeeStore;
 
   console.log({ coffeeStore });
   return (
@@ -46,7 +46,7 @@ export default async function Page(props: {
           <Image
             src={
               imgUrl ||
-              "https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80"
+              'https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80'
             }
             width={740}
             height={360}
@@ -57,12 +57,7 @@ export default async function Page(props: {
         <div className="glass mt-12 flex-col rounded-lg p-4 lg:mt-48">
           {address && (
             <div className="mb-4 flex">
-              <Image
-                src="/images/icons/places.svg"
-                alt="places icon"
-                width={24}
-                height={24}
-              />
+              <Image src="/images/icons/places.svg" alt="places icon" width={24} height={24} />
               <p className="pl-2">{address}</p>
             </div>
           )}

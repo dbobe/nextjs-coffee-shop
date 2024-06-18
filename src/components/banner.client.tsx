@@ -1,6 +1,6 @@
-"use client";
-import Image from "next/image";
-import React, { MouseEventHandler } from "react";
+'use client';
+import Image from 'next/image';
+import React, { MouseEventHandler } from 'react';
 
 export default function Banner({
   handleOnClick,
